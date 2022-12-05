@@ -51,8 +51,7 @@ if(!validPassword){
 
 // const token=jwt.sign({_id:user._id},process.env.SECRET_TOKEN)
 
-// res.header('auth-token',token).send(token)
-return res.status(200).json(user)
+return res.header('auth-token',token).json(user)
 }
 
 

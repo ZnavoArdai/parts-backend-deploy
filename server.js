@@ -11,8 +11,8 @@ const productsRouter=require("./routes/productsRouter")
 const storesRouter=require("./routes/storeRouter")
 const infoRouter=require("./routes/infoRouter")
 const categoryRouter=require("./routes/categoryRouter")
-
-
+const userRouter=require("./routes/userRouter")
+const {authByToken}=require("./middlewear/usersMiddlewear")
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -20,11 +20,12 @@ app.use(express.json({ extended: true }));
 app.use(cors());
 
 const port = 8080;
-app.use("/orders",ordersRouter)
+app.use("/orders",authByToken,ordersRouter)
 app.use("/products",productsRouter)
 app.use("/stores",storesRouter)
 app.use("/info",infoRouter)
 app.use("/category",categoryRouter)
+app.use("/user",userRouter)
 
 
 

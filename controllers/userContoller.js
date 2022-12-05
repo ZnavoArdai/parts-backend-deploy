@@ -49,7 +49,7 @@ if(!validPassword){
 
 }
 
-// const token=jwt.sign({_id:user._id},process.env.SECRET_TOKEN)
+const token=jwt.sign({_id:user._id},process.env.SECRET_TOKEN)
 
 return res.header('auth-token',token).json(user)
 }

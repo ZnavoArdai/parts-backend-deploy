@@ -1,14 +1,13 @@
 {
   "name": "parts-mern-proj",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js",
-    "server": "nodemon server/server.js",
+    "start": "node server.js",
+    "server": "nodemon server.js",
     "client": "cd client && npm start",
-    "build": "cd client && npm install && npm run build",
+    "build": "npm install && npm run build",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "keywords": [],
@@ -22,5 +21,15 @@
     "mongoose": "^6.7.5",
     "nodemon": "^2.0.20",
     "react-icons": "^4.7.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZnavoArdai/parts-backend-deploy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZnavoArdai/parts-backend-deploy/issues"
+  },
+  "homepage": "https://github.com/ZnavoArdai/parts-backend-deploy#readme",
+  "description": ""
 }

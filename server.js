@@ -20,7 +20,7 @@ app.use(express.json({ extended: true }));
 app.use(cors());
 
 const port = 8080;
-app.use("/orders",authByToken,ordersRouter)
+app.use("/orders",ordersRouter)
 app.use("/products",productsRouter)
 app.use("/stores",storesRouter)
 app.use("/info",infoRouter)

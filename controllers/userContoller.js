@@ -18,7 +18,6 @@ if(emailExist){
 
 const salt= await bcrypt.genSalt(10)
 const hasPssword= await bcrypt.hash(req.body.password,salt)
-
     const user=new Users({
         name:req.body.name,
         email:req.body.email,
@@ -52,10 +51,11 @@ if(!validPassword){
 
 const token=jwt.sign({_id:user._id},process.env.SECRET_TOKEN)
 
-localStorage.setItem("auth-token",res.header('auth-token',token))
 return res.header('auth-token',token).json(user)
-
 }
+
+
+
 
 module.exports={
     register,

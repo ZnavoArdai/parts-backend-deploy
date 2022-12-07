@@ -1,6 +1,8 @@
 const Users=require("../models/userModel");
 const bcrypt=require("bcryptjs")
 const jwt=require("jsonwebtoken")
+const cookieParser = require('cookie-parser')
+
 const {registerValidation,loginValidation}=require("../validation/userValidation")
 
 
@@ -49,7 +51,13 @@ if(!validPassword){
 
 }
 
-const token=jwt.sign({_id:user._id},process.env.SECRET_TOKEN)
+const token=jwt.sign({_id:user._id},process.env.SECRET_TOKEN,{expiresIn:"1h"})
+
+res.cookieParser("jwt",token,{
+    // withCrdentials:true,
+    httpOnly:true,
+
+})
 
 return res.header('auth-token',token).json(user)
 }

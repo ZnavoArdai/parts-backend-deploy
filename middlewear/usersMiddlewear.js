@@ -9,8 +9,8 @@ res.status(401).json({massage:"access denied"})
 }
 try {
     
-const verfid=jwt.verify(token,process.env.SECRET_TOKEN)
-req.user=verfid;
+const verified=jwt.verify(token,process.env.SECRET_TOKEN)
+req.user=verified;
 
 } catch (error) {
     res.status(400).json({massage:"invaild token"})

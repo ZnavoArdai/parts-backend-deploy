@@ -51,7 +51,7 @@ if(!validPassword){
 
 }
 
-const token=jwt.sign({_id:user._id},process.env.SECRET_TOKEN,{expiresIn:"1h"})
+const token=jwt.sign({_id:user._id},process.env.SECRET_TOKEN)
 
 // res.cookieParser("jwt",token,{
 //     // withCrdentials:true,
@@ -60,7 +60,7 @@ const token=jwt.sign({_id:user._id},process.env.SECRET_TOKEN,{expiresIn:"1h"})
 // })
 
 
-return res.header('auth-token',token).json(user)
+return res.header('auth-token',token).json({user:user,token:token})
 }
 
 

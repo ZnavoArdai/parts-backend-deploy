@@ -60,11 +60,7 @@ const token=jwt.sign({_id:user._id},process.env.SECRET_TOKEN)
 // })
 
 
-return res.header('auth-token',token).json(user).cookie("token",token,{
-    maxAge:5000,
-    httpOnly:true,
-    secure:true
-})
+return res.header('auth-token',token).json(user)
 }
 
 

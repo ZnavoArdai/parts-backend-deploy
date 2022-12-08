@@ -60,7 +60,7 @@ const token=jwt.sign({_id:user._id},process.env.SECRET_TOKEN)
 // })
 
 
-return res.header('auth-token',token).json({user:user,token:token})
+return res.header('auth-token',token).json(user)
 }
 
 

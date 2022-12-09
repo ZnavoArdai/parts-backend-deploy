@@ -10,7 +10,7 @@ res.status(401).json({massage:"access denied"})
 try {
     
 const verified=jwt.verify(token,process.env.SECRET_TOKEN)
-req.user=verified;
+req.body=verified;
 next()
 
 } catch (error) {

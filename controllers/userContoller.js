@@ -53,11 +53,11 @@ if(!validPassword){
 
 const token=jwt.sign({_id:user._id},process.env.SECRET_TOKEN)
 
-// res.cookieParser("jwt",token,{
-//     // withCrdentials:true,
-//     httpOnly:true,
 
-// })
+res.cookieParser("jwt",token,{
+    httpOnly:true
+
+})
 
 
 return res.header('auth-token',token).json(user)

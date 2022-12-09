@@ -28,7 +28,7 @@ app.use("/stores",storesRouter)
 app.use("/info",infoRouter)
 app.use("/category",categoryRouter)
 app.use("/user",userRouter)
-app.use("/",authByToken)
+app.use(authByToken)
 
 
 

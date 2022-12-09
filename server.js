@@ -22,13 +22,12 @@ app.use(cors());
 app.use(cookieParser())
 
 const port = 8080;
-app.use("/orders",ordersRouter)
-app.use("/products",productsRouter)
-app.use("/stores",storesRouter)
-app.use("/info",infoRouter)
-app.use("/category",categoryRouter)
+app.use("/orders",authByToken,ordersRouter)
+app.use("/products",authByToken,productsRouter)
+app.use("/stores",authByToken,storesRouter)
+app.use("/info",authByToken,infoRouter)
+app.use("/category",authByToken,categoryRouter)
 app.use("/user",userRouter)
-app.use(authByToken)
 
 
 
